@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIFFER Store</title>
+    <!-- ربط ملف التصميم -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= شريط التنقل العلوي (السيرش والسلة فقط) ================= -->
+    <header class="navbar">
+        <div class="nav-icons-left">
+            <span class="icon" onclick="openSearch()" title="البحث">🔍</span>
+        </div>
+        
+        <div class="logo">DIFFER</div>
+        
+        <div class="nav-icons-right">
+            <span class="icon cart-icon" onclick="toggleCart()" title="السلة">🛒<span id="cart-count">0</span></span>
+        </div>
+    </header>
+
+    <!-- ================= البنر الرئيسي ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BUY 2 GET 1 FREE</h1>
+            <p>اكتشف أحدث تشكيلة ملابس رياضية مصممة خصيصاً لأدائك اليومي</p>
+            <a href="#shop" class="shop-btn">Shop Sale</a>
+        </div>
+    </section>
+
+    <!-- ================= قسم نبذة عن البراند (About Us) ================= -->
+    <section id="about-section" class="about-section">
+        <div class="about-content">
+            <h2> Brand DIFFER</h2>
+            <p>نحن في DIFFER نؤمن بأن الملابس الرياضية ليست مجرد مظهر، بل هي درعك اليومي لتحقيق أقصى أداء وتجاوز حدودك. صُممت منتجاتنا خصيصاً للرجل العصري الذي يجمع بين القوة، الأناقة، والانضباط داخل صالة الألعاب الرياضية وخارجها.</p>
+        </div>
+    </section>
+
+    <!-- ================= قسم المنتجات والتصفية ================= -->
+    <section id="shop" class="products-section">
+        <h2>تشكيلة المنتجات</h2>
+        
+
+        <!-- شبكة المنتجات -->
+        <div class="products-grid" id="products-container">
+            
+            <!-- منتج 1 (شتوي) -->
+            <div class="product-card" data-category="winter">
+                <span class="rank-badge">#1</span>
+                <span class="discount-badge">%30 خصم</span>
+                <div class="product-img-container">
+                    <div class="product-img-placeholder">صورة شتوي 1</div>
+                    <div class="product-hover-details">
+                        <h4>هودي رياضي شتوي ثقيل</h4>
+                        <p>دفء فائق وخامة قطنية ممتازة للأيام الباردة داخل وخارج الجيم.</p>
+                    </div>
+                </div>
+                <h3>هودي شتوي DIFFER</h3>
+                <p class="price">600 ج.م</p>
+                <button onclick="addToCart('هودي شتوي DIFFER', 600)">إضافة للسلة</button>
+            </div>
+
+            <!-- منتج 2 (صيفي) -->
+            <div class="product-card" data-category="summer">
+                <span class="rank-badge">#2</span>
+                <span class="discount-badge">%25 خصم</span>
+                <div class="product-img-container">
+                    <div class="product-img-placeholder">صورة صيفي 1</div>
+                    <div class="product-hover-details">
+                        <h4>تيشيرت رياضي خفيف</h4>
+                        <p>مصنوع من خامات مقاومة للعرق ومرنة للغاية لتمنحك راحة كاملة.</p>
+                    </div>
+                </div>
+                <h3>تيشيرت صيفي DIFFER</h3>
+                <p class="price">350 ج.م</p>
+                <button onclick="addToCart('تيشيرت صيفي DIFFER', 350)">إضافة للسلة</button>
+            </div>
+
+            <!-- منتج 3 (شتوي) -->
+            <div class="product-card" data-category="winter">
+                <span class="rank-badge">#3</span>
+                <span class="discount-badge">%20 خصم</span>
+                <div class="product-img-container">
+                    <div class="product-img-placeholder">صورة شتوي 2</div>
+                    <div class="product-hover-details">
+                        <h4>جاكيت تدريب شتوي مبطن</h4>
+                        <p>حماية كاملة من الهواء والبرودة أثناء التمرين في الأماكن المفتوحة.</p>
+                    </div>
+                </div>
+                <h3>جاكيت شتوي DIFFER</h3>
+                <p class="price">850 ج.م</p>
+                <button onclick="addToCart('جاكيت شتوي DIFFER', 850)">إضافة للسلة</button>
+            </div>
+
+            <!-- منتج 4 (صيفي) -->
+            <div class="product-card" data-category="summer">
+                <span class="rank-badge">#4</span>
+                <span class="discount-badge">%15 خصم</span>
+                <div class="product-img-container">
+                    <div class="product-img-placeholder">صورة صيفي 2</div>
+                    <div class="product-hover-details">
+                        <h4>شورت تدريب صيفي خفيف</h4>
+                        <p>تصميم مريح وجيد التهوية مع جيوب بسحاب آمنة.</p>
+                    </div>
+                </div>
+                <h3>شورت صيفي DIFFER</h3>
+                <p class="price">250 ج.م</p>
+                <button onclick="addToCart('شورت صيفي DIFFER', 250)">إضافة للسلة</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= سلة المشتريات الجانبية ================= -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <button onclick="toggleCart()" class="close-btn">×</button>
+        </div>
+        <ul id="cart-items"></ul>
+        <div class="cart-footer">
+            <p>الإجمالي: <span id="total-price">0</span> ج.م</p>
+            <button onclick="sendOrderToWhatsApp()" class="whatsapp-checkout-btn">تأكيد الطلب عبر الواتساب</button>
+        </div>
+    </div>
+
+    <!-- ================= تذييل الصفحة مع النص المطلوب والواتساب ================= -->
+    <footer class="footer">
+        <p>Developed With <span class="footer-styled">𝓑𝓪 𝓼 𝓴𝓸 😉♥️</span> | <a href="https://wa.me/201234567890" target="_blank">WhatsApp</a></p>
+    </footer>
+
+    <!-- ربط ملف الجافاسكريبت -->
+    <script src="script.js"></script>
+</body>
+</html>
